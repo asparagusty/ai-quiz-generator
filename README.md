@@ -1,5 +1,7 @@
 AI-Assisted Knowledge Quiz
+
 🚀 Project Setup & Demo
+
 Web Demo: https://ai-quiz-generator-38d4fhznj-ayushika-agarwals-projects.vercel.app
 # Install dependencies
 npm install
@@ -9,9 +11,11 @@ npm run dev
 
 # Build for production
 npm run build
+
 The app will open at http://localhost:5173
+
 🎯 Problem Understanding
-Problem Summary
+
 Create an AI-powered quiz application that:
 
 Allows users to select from various topics
@@ -22,7 +26,8 @@ Provides an interactive quiz experience with navigation
 
 Generates custom AI feedback based on user performance
 
-Assumptions Made
+**Assumptions Made**
+
 Users have stable internet connection for AI API calls
 
 Fallback questions provided if AI service is unavailable
@@ -31,16 +36,22 @@ Mobile-responsive design for cross-device compatibility
 
 JSON parsing from AI responses requires error handling
 
-🤖 AI Prompts & Iterations
+**🤖 AI Prompts & Iterations**
+
 Initial Prompt (V1)
-text
+
+
 "Generate 5 multiple choice questions about React"
+
 Issues: Inconsistent format, no JSON structure, mixed response types
 
-Refined Prompt (V2)
-text
+**Refined Prompt (V2)**
+
+
 "Generate exactly 5 multiple-choice questions about ${topic}. 
+
 Each question should have 4 options and one correct answer.
+
 Return ONLY valid JSON in this format:
 {
   'questions': [
@@ -56,6 +67,7 @@ text
 "Create 3 multiple choice quiz questions about ${topic}. 
 Each question should have 4 options and indicate the correct answer.
 Format: 
+
 Q1. Question? 
 A) Option1 B) Option2 C) Option3 D) Option4 
 Answer: A
@@ -96,6 +108,7 @@ score: Accumulates user score
 AI Service Integration
 javascript
 // Hugging Face Inference API
+
 const hf = new HfInference(import.meta.env.VITE_HUGGING_FACE_API_KEY);
 
 const response = await hf.textGeneration({
@@ -104,6 +117,7 @@ const response = await hf.textGeneration({
   parameters: { max_new_tokens: 500, temperature: 0.7 }
 });
 Key Components
+
 Topic Selection Screen: Grid of topic buttons
 
 Loading Screen: Animated spinner with fun facts
@@ -113,6 +127,7 @@ Quiz Screen: Question display with option buttons
 Result Screen: Score display with AI-generated feedback
 
 📱 Screenshots
+
 Screen 1: Topic Selection
 <img width="1848" height="891" alt="Screenshot 2025-10-04 223112" src="https://github.com/user-attachments/assets/87cb2933-dd92-495c-85d4-347a3a88ff2d" />
 
@@ -154,7 +169,7 @@ AI-generated feedback message
 Retry options
 
 🐛 Known Issues & Improvements
-Current Limitations
+
 AI Dependency: Requires Hugging Face API key
 
 Question Count: Fixed at 3-5 questions per quiz
@@ -164,6 +179,7 @@ Error Handling: Basic fallback without retry mechanism
 No Persistence: Scores not saved between sessions
 
 Planned Improvements
+
 Enhanced AI Integration
 
 Multiple AI provider fallbacks (OpenAI, Anthropic)
@@ -193,7 +209,7 @@ PWA capabilities for offline use
 Advanced analytics
 
 ✨ Bonus Features Implemented
-Polish & Enhancements
+
 Dark/Light Mode: Full theme switching with smooth transitions
 
 Responsive Design: Mobile-first approach with Tailwind CSS
@@ -205,6 +221,7 @@ Error Handling: Graceful fallbacks with user-friendly messages
 Accessibility: Proper contrast ratios and focus states
 
 UI/UX Features
+
 Smooth Animations: CSS transitions for all interactive elements
 
 Visual Feedback: Hover states and loading indicators
@@ -214,6 +231,7 @@ Progress Tracking: Real-time score and question progress
 Custom Feedback: AI-generated personalized result messages
 
 🛠️ Technical Stack
+
 Frontend: React 18 + Vite
 
 Styling: Tailwind CSS
@@ -225,9 +243,13 @@ Deployment: Vercel + GitHub
 State Management: React Hooks
 
 📦 Environment Variables
+
 env
+
 VITE_HUGGING_FACE_API_KEY=your_hugging_face_token_here
-🚀 Deployment
+
+**🚀 Deployment**
+
 The application is automatically deployed via Vercel with continuous integration from the GitHub repository. Any push to the main branch triggers a new deployment.
 
 
