@@ -2,7 +2,7 @@ AI-Assisted Knowledge Quiz
 
 🚀 Project Setup & Demo
 
-Web Demo: https://ai-quiz-generator-38d4fhznj-ayushika-agarwals-projects.vercel.app
+Web Demo: https://ai-quiz-generator-38d4fhznj-ayushika-agarwals-projects.vercel.app?_vercel_share=J4nsJH1dlnVnsc7wRDgHcNyyry9MW5M0
 # Install dependencies
 npm install
 
@@ -62,7 +62,8 @@ Return ONLY valid JSON in this format:
     }
   ]
 }"
-Final Prompt (V3 - Hugging Face)
+
+Final Prompt 
 text
 "Create 3 multiple choice quiz questions about ${topic}. 
 Each question should have 4 options and indicate the correct answer.
